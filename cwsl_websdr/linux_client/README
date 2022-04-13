@@ -1,0 +1,19 @@
+/*
+
+  cwsl_net_client_to_alsa (c)2015,2016,2017 Hardy Lau DL1GLH
+
+  This program connects to CWSL_WEBSDR (extension to CWSL_TEE and QS1R)
+  and feeds IQ-Stream (UDP) into ALSA snd-aloop device
+
+  WEBSDR can read out of ALSA snd-aloop
+*/
+
+# load sound loopback device
+modprobe snd-aloop
+# start connector
+# usage: <IP address> <BAND> <ScalingFactor> D|I
+#        IP address is address of Server with CWSL_TEE (QS1R)
+#        Band is BAND of CW-Skimmer, Scaling Factor see CWSL_FILE
+#        D = become daemon
+./cwsl_net_client_to_alsa 141.68.28.30 0 13 D
+
