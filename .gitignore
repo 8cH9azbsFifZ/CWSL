@@ -8,3 +8,4 @@
 *.opendb
 *.sdf
 ipch
+.DS_Store
